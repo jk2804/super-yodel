@@ -1,0 +1,14 @@
+liste = [15, 123, 2, 56, 2]
+
+print(liste)
+
+x = min(liste)
+y = max(liste)
+
+print("min =" and x)
+print("max =" and y)
+
+
+duplicates = list(set(liste))
+
+print(duplicates)
