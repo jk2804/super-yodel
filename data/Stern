@@ -1,0 +1,12 @@
+import  turtle
+
+box = turtle.Turtle()
+def star():
+    for i in range(5):
+        box.forward(100)
+        box.right(144)    
+        
+    turtle.exitonclick
+    
+star()
+turtle.exitonclick
