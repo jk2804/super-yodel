@@ -1,0 +1,10 @@
+def nested_loop(number):
+    i = 1
+    while i <= int(number):
+        row_str = str(i) * i
+        print(row_str)
+        i = i+1
+
+number1 = input("Write a Number: ")
+
+nested_loop(number1)
