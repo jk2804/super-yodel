@@ -1,0 +1,15 @@
+def tree(height):
+    
+    for i in range(1, a+1):
+        emptyspace = a-i
+        stars = (i*2)-1
+        
+        space = emptyspace * " "
+        star = stars * "*"
+        print(space + star)
+    print((a-2)*" "+"| |")
+
+print("Wie hoch soll der Baum sein?")
+a = int(input())
+    
+tree(a)
