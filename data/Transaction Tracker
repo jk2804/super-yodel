@@ -1,0 +1,65 @@
+transactions = [
+    {'data': 'purchase', 'amount': 50, 'date':'2024-01-13'},
+    {'data': 'sale', 'amount': 100, 'date':'2024-01-13'},
+    {'data': 'purchase', 'amount': 90, 'date':'2024-01-14'},
+    {'data': 'purchase', 'amount': 20, 'date':'2024-01-14'},
+    {'data': 'sale', 'amount': 10, 'date':'2024-01-14'},
+]
+
+def transaction_counter(): # funktioniert
+    count = len(transactions)
+    print("transactions: ", count)
+    x = 0
+    p = 0
+    s = 0
+    while x < count:
+        transaction_data = transactions[x]['data']
+        if transaction_data == 'purchase':
+            p += 1
+            x += 1
+        elif transaction_data == transactions[x]['data']:
+            s += 1
+            x += 1
+            
+    print("purchase: ", p)
+    print("sales: ", s)
+
+def last_transaction(): # funktioniert
+    count = len(transactions)
+    x = 0
+    y = 0
+    s = 0
+    while x < count:
+        transaction_date = transactions[x]['date']
+        if transaction_date == '2024-01-14':
+            y += 1
+            x += 1
+        else:
+            x += 1
+    
+    print("Transactions yesterday: ", y)
+    
+def income():
+    count = len(transactions)
+    #print("transactions: ", count) # nur nötig wenn nicht alles auf einmal geprintet wird
+    x = 0
+    i = 0
+    e = 0
+    while x < count:
+        transaction_data = transactions[x]['data']
+        if transaction_data == "purchase":
+            e += int(transactions[x]['amount'])
+            x += 1
+        elif transaction_data == "sale":
+            i += int(transactions[x]['amount'])
+            x += 1
+    
+    benefit = i - e
+    print("income: ", i, "Euro")
+    print("expenses: ", e, "Euro")
+    print("benefit: ", benefit, "Euro")
+    
+
+transaction_counter()
+last_transaction()
+income()

@@ -1,0 +1,37 @@
+def matrix_multiply(matrix1, matrix2):
+    result = []
+    
+    if len(matrix1[0]) != len(matrix2):
+        print("Die Anzahl der Spalten in der ersten Matrix muss der Anzahl der Zeilen in der zweiten Matrix entsprechen.")
+        return None
+    
+    for i in range(len(matrix1)):
+        row = []
+        for j in range(len(matrix2[0])):
+            element = 0
+            for k in range(len(matrix2)):
+                element += matrix1[i][k] * matrix2[k][j]
+            row.append(element)
+        result.append(row)
+    
+    return result
+
+# Beispielmatrizen
+matrix_a = [
+    [1, 2, 3],
+    [4, 5, 6],
+]
+
+matrix_b = [
+    [7, 8],
+    [9, 10],
+    [11, 12],
+]
+
+# Matrixmultiplikation aufrufen
+result_matrix = matrix_multiply(matrix_a, matrix_b)
+
+# Ergebnis ausgeben
+if result_matrix:
+    for row in result_matrix:
+        print(row)
